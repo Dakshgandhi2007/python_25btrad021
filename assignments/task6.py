@@ -1,1 +1,0 @@
-print("daksh\t19\tudaipur")
