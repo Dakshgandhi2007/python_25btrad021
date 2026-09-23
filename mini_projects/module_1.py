@@ -1,11 +1,25 @@
-item = input("Enter item name: ")
-price = float(input("Enter price per unit: "))
-qty = int(input("Enter quantity: "))
+def calculate_bill(items):
+    total = 0
+    print("\n----- BILL -----")
+    print(f"{'Item':<15}{'Price':<10}{'Qty':<5}{'Amount':<10}")
+    print("-" * 40)
+    
+    for item, price, qty in items:
+        amount = price * qty
+        total += amount
+        print(f"{item:<15}{price:<10}{qty:<5}{amount:<10}")
+    
+    print("-" * 40)
+    print(f"{'Total':<30}{total}")
 
-total = price * qty
+n = int(input("How many items? "))
+items = []
 
-print("\n----- BILL -----")
-print(f"Item: {item}")
-print(f"Price per unit: {price}")
-print(f"Quantity: {qty}")
-print(f"Total Amount: {total:.2f}")
+for i in range(n):
+    print(f"\nItem {i+1}:")
+    name = input("  Name: ")
+    price = float(input("  Price per unit: "))
+    qty = int(input("  Quantity: "))
+    items.append((name, price, qty))
+
+calculate_bill(items)
