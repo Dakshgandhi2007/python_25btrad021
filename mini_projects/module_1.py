@@ -7,10 +7,10 @@ def calculate_bill(items):
     for item, price, qty in items:
         amount = price * qty
         total += amount
-        print(f"{item:<15}{price:<10}{qty:<5}{amount:<10}")
+        print(f"{item:<15}{price:<10.2f}{qty:<5}{amount:<10.2f}")  # fixed
     
     print("-" * 40)
-    print(f"{'Total':<30}{total}")
+    print(f"{'Total':<30}{total:.2f}")  # fixed
 
 n = int(input("How many items? "))
 items = []
